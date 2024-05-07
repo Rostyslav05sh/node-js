@@ -3,7 +3,7 @@ import { User } from "../models/user.model";
 
 class UsersByUserIdRepository {
   public async getUserById(userId: string): Promise<IUser> {
-    return await User.findOne({userId});
+    return await User.findById(userId);
   }
 
   public async updateUserById(userId: string, dto: Partial<IUser>): Promise<IUser> {

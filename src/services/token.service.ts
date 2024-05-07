@@ -16,7 +16,7 @@ class TokenService {
         return {accessToken, accessExpiresIn: config.JWT_ACCESS_EXPIRES_IN, refreshToken, refreshExpiresIn: config.JWT_REFRESH_EXPIRES_IN}
     }
 
-    public async checkToken(token: string, type: TokenTypeEnum) {
+    public checkToken(token: string, type: TokenTypeEnum): IJWTPayload {
         try {
             let secret: string
 

@@ -9,6 +9,6 @@ const router = Router();
 
 router.get("/me", authMiddleware.checkAccesToken, userByUserIdController.getMe);
 router.put("/me", authMiddleware.checkAccesToken, commonMiddleware.isBodyValid(UserValidator.update), userByUserIdController.updateMe);
-router.delete("/me", authMiddleware.checkAccesToken, commonMiddleware.isIdValid, commonMiddleware.isExist, userByUserIdController.deleteMe);
+router.delete("/me", authMiddleware.checkAccesToken, userByUserIdController.deleteMe);
 
 export const userByUserIdRouter = router;
